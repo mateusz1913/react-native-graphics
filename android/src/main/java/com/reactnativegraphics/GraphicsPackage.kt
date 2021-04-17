@@ -12,6 +12,10 @@ class GraphicsPackage : ReactPackage {
     }
 
     override fun createViewManagers(reactContext: ReactApplicationContext): List<ViewManager<*, *>> {
-        return listOf(GraphicsViewManager())
+        return listOf(
+          AngularGradientViewManager(),
+          LinearGradientViewManager(),
+          RadialGradientViewManager()
+        )
     }
 }
