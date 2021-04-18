@@ -10,10 +10,12 @@ Pod::Spec.new do |s|
   s.license      = package["license"]
   s.authors      = package["author"]
 
-  s.platforms    = { :ios => "10.0" }
+  s.platforms    = { :ios => "10.0", :osx => "10.13" }
   s.source       = { :git => "https://github.com/mateusz1913/react-native-graphics.git", :tag => "#{s.version}" }
 
-  s.source_files = "ios/**/*.{h,m,mm,swift}"
+  s.source_files = "apple/common/**/*.{h,m,mm,swift}"
+  s.ios.source_files = "apple/ios/**/*.{h,m,mm,swift}"
+  s.osx.source_files = "apple/macos/**/*.{h,m,mm,swift}"
 
   s.dependency "React-Core"
 end
