@@ -1,14 +1,8 @@
 import React from 'react';
-import type { ColorValue, ProcessedColorValue, StyleProp, ViewStyle } from 'react-native';
+import type { ProcessedColorValue } from 'react-native';
 import { processColor, requireNativeComponent } from 'react-native';
 
-export interface RadialGradientProps {
-  colors: (number | ColorValue | undefined)[];
-  locations: number[];
-  radius: number;
-  centerPoint?: { x: number; y: number };
-  style?: StyleProp<ViewStyle>;
-}
+import type { RadialGradientProps } from './types';
 
 interface NativeProps extends Omit<RadialGradientProps, 'colors'> {
   colors: (ProcessedColorValue | null | undefined)[];

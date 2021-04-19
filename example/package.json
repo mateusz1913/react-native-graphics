@@ -6,16 +6,26 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "start": "react-native start"
+    "start": "react-native start",
+    "build": "rm -rf dist/ && webpack --mode=production --config webpack.config.js",
+    "web": "webpack serve --mode=development --config webpack.config.js"
   },
   "dependencies": {
     "react": "17.0.1",
-    "react-native": "0.64.0"
+    "react-native": "0.64.0",
+    "react-native-web": "^0.15.7"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/runtime": "^7.12.5",
+    "babel-loader": "^8.2.2",
     "babel-plugin-module-resolver": "^4.0.0",
-    "metro-react-native-babel-preset": "^0.64.0"
+    "babel-plugin-react-native-web": "^0.15.7",
+    "html-webpack-plugin": "^5.3.1",
+    "metro-react-native-babel-preset": "^0.64.0",
+    "react-dom": "17.0.1",
+    "webpack": "^5.33.2",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^3.11.2"
   }
 }
