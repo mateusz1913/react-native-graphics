@@ -22,6 +22,6 @@ class RadialGradientViewManager: GradientViewManager<RadialGradientView>() {
   override fun getName(): String { return NAME }
 
   companion object {
-    const val NAME = "RadialGradientView"
+    const val NAME = "RNGRadialGradientView"
   }
 }

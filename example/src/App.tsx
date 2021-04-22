@@ -1,19 +1,51 @@
-import React from 'react';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { Image, ScrollView, StyleSheet, Switch, Text, View } from 'react-native';
 import {
   AngularGradientView,
+  BlurType,
+  BlurView,
   LinearGradientView,
   RadialGradientView,
 } from 'react-native-graphics';
 
 export default function App() {
+  const [ shouldBlurOverlay, setShouldBlurOverlay ] = useState(false);
+
   return (
     <View style={styles.container}>
       <ScrollView
         contentContainerStyle={styles.scrollContainer}
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
+        style={styles.scroll}
       >
+        <View style={styles.box}>
+          <View style={[ styles.blurContentContainer, styles.blurLeftLogo ]}>
+            <Image
+              style={styles.logo}
+              source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }}
+            />
+          </View>
+          <BlurView
+            blurType={BlurType.light}
+            fallbackColor={'#FFAA77'}
+            shouldOverlay={shouldBlurOverlay}
+            style={styles.blurContainer}>
+            <View style={[ styles.blurContentContainer, styles.blurRightLogo ]}>
+              <Image
+                style={styles.logo}
+                source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }}
+              />
+            </View>
+          </BlurView>
+        </View>
+        <View style={styles.blurSwitchContainer}>
+          <Text style={styles.blurText}>Should blur overlay?</Text>
+          <Switch
+            onValueChange={setShouldBlurOverlay}
+            value={shouldBlurOverlay}
+          />
+        </View>
         <LinearGradientView
           colors={[ 'rgba(100,200,250,0.3)', '#7889CC', '#4556BA' ]}
           locations={[ 0.1, 0.7, 0.9 ]}
@@ -58,15 +90,30 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  childBox: {
-    backgroundColor: 'rgba(250,120,0,0.4)',
-    height: 60,
-    width: 60,
+  blurContentContainer: {
+    alignSelf: 'stretch',
+    flexDirection: 'row',
   },
-  container: {
+  blurContainer: {
+    ...StyleSheet.absoluteFillObject,
     alignItems: 'center',
-    flex: 1,
     justifyContent: 'center',
+  },
+  blurLeftLogo: {
+    flexDirection: 'row',
+  },
+  blurRightLogo: {
+    flexDirection: 'row-reverse',
+  },
+  blurSwitchContainer: {
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    margin: 10,
+  },
+  blurText: {
+    fontSize: 14,
+    margin: 10,
   },
   box: {
     alignItems: 'center',
@@ -77,6 +124,21 @@ const styles = StyleSheet.create({
     marginVertical: 20,
     width: 200,
   },
+  childBox: {
+    backgroundColor: 'rgba(250,120,0,0.4)',
+    height: 60,
+    width: 60,
+  },
+  container: {
+    alignItems: 'center',
+    alignSelf: 'stretch',
+    flex: 1,
+    justifyContent: 'center',
+  },
+  logo: {
+    height: 100,
+    width: 100,
+  },
   roundedBox: {
     alignItems: 'center',
     borderRadius: 40,
@@ -86,7 +148,13 @@ const styles = StyleSheet.create({
     marginVertical: 20,
     width: 200,
   },
+  scroll: {
+    alignSelf: 'stretch',
+  },
   scrollContainer: {
+    alignItems: 'center',
+    alignSelf: 'stretch',
+    flexGrow: 1,
     padding: 10,
   },
 });

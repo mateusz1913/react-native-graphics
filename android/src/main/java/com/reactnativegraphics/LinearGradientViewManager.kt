@@ -32,6 +32,6 @@ class LinearGradientViewManager: GradientViewManager<LinearGradientView>() {
   override fun getName(): String { return NAME }
 
   companion object {
-    const val NAME = "LinearGradientView"
+    const val NAME = "RNGLinearGradientView"
   }
 }

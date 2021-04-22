@@ -1,12 +1,11 @@
-class RadialGradientView: GradientView {
+class RNGRadialGradientView: RNGGradientView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
     }
 
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        setup()
+        fatalError("init(coder:) has not been implemented")
     }
     
     func setup() {
