@@ -8,7 +8,7 @@ interface NativeProps extends Omit<AngularGradientProps, 'colors'> {
   colors: (ProcessedColorValue | null | undefined)[];
 }
 
-const NativeAngularGradientView = requireNativeComponent<NativeProps>('AngularGradientView');
+const NativeAngularGradientView = requireNativeComponent<NativeProps>('RNGAngularGradientView');
 
 export const AngularGradientView: React.FC<AngularGradientProps> = (props) => {
   const { colors, ...rest } = props;

@@ -8,7 +8,7 @@ interface NativeProps extends Omit<RadialGradientProps, 'colors'> {
   colors: (ProcessedColorValue | null | undefined)[];
 }
 
-const NativeRadialGradientView = requireNativeComponent<NativeProps>('RadialGradientView');
+const NativeRadialGradientView = requireNativeComponent<NativeProps>('RNGRadialGradientView');
 
 export const RadialGradientView: React.FC<RadialGradientProps> = (props) => {
   const { colors, ...rest } = props;

@@ -2,11 +2,11 @@
 #import <React/RCTView.h>
 #import <React/RCTViewManager.h>
 
-#import "GradientView.h"
+#import "RNGGradientView.h"
 
-@interface RCT_EXTERN_MODULE(AngularGradientViewManager, RCTViewManager)
+@interface RCT_EXTERN_MODULE(RNGLinearGradientViewManager, RCTViewManager)
 
-RCT_CUSTOM_VIEW_PROPERTY(colors, NSArray*, GradientView) {
+RCT_CUSTOM_VIEW_PROPERTY(colors, NSArray*, RNGGradientView) {
     NSMutableArray *colors = [NSMutableArray arrayWithCapacity:((NSArray*)json).count];
     for (NSObject *colorString in (NSArray*)json)
     {
@@ -20,7 +20,10 @@ RCT_CUSTOM_VIEW_PROPERTY(colors, NSArray*, GradientView) {
     }
     [view setColors:colors];
 }
-RCT_EXPORT_VIEW_PROPERTY(positions, NSArray)
-RCT_EXPORT_VIEW_PROPERTY(centerPoint, CGPoint)
+RCT_EXPORT_VIEW_PROPERTY(locations, NSArray)
+RCT_EXPORT_VIEW_PROPERTY(startPoint, CGPoint)
+RCT_EXPORT_VIEW_PROPERTY(endPoint, CGPoint)
+RCT_EXPORT_VIEW_PROPERTY(angle, NSNumber)
+RCT_EXPORT_VIEW_PROPERTY(angleCenter, CGPoint)
 
 @end

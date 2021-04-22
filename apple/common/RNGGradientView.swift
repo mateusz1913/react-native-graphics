@@ -1,4 +1,4 @@
-class GradientView: RCTView {
+class RNGGradientView: RCTView {
     var gradientLayer: CAGradientLayer {
         return layer as! CAGradientLayer
     }

@@ -8,7 +8,7 @@ interface NativeProps extends Omit<LinearGradientProps, 'colors'> {
   colors: (ProcessedColorValue | null | undefined)[];
 }
 
-const NativeLinearGradientView = requireNativeComponent<NativeProps>('LinearGradientView');
+const NativeLinearGradientView = requireNativeComponent<NativeProps>('RNGLinearGradientView');
 
 export const LinearGradientView: React.FC<LinearGradientProps> = (props) => {
   const { colors, ...rest } = props;

@@ -17,6 +17,6 @@ class AngularGradientViewManager: GradientViewManager<AngularGradientView>() {
   override fun getName(): String { return NAME }
 
   companion object {
-    const val NAME = "AngularGradientView"
+    const val NAME = "RNGAngularGradientView"
   }
 }

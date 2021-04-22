@@ -7,16 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		83584FB8262C80290071FE8C /* LinearGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83584FAD262C80290071FE8C /* LinearGradientView.swift */; };
-		83584FB9262C80290071FE8C /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83584FAE262C80290071FE8C /* GradientView.swift */; };
-		83584FBA262C80290071FE8C /* AngularGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83584FAF262C80290071FE8C /* AngularGradientView.swift */; };
-		83584FBB262C80290071FE8C /* RadialGradientViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 83584FB0262C80290071FE8C /* RadialGradientViewManager.m */; };
-		83584FBC262C80290071FE8C /* RadialGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83584FB1262C80290071FE8C /* RadialGradientView.swift */; };
-		83584FBD262C80290071FE8C /* LinearGradientViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 83584FB3262C80290071FE8C /* LinearGradientViewManager.m */; };
-		83584FBE262C80290071FE8C /* LinearGradientViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83584FB4262C80290071FE8C /* LinearGradientViewManager.swift */; };
-		83584FBF262C80290071FE8C /* AngularGradientViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 83584FB5262C80290071FE8C /* AngularGradientViewManager.m */; };
-		83584FC0262C80290071FE8C /* AngularGradientViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83584FB6262C80290071FE8C /* AngularGradientViewManager.swift */; };
-		83584FC1262C80290071FE8C /* RadialGradientViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83584FB7262C80290071FE8C /* RadialGradientViewManager.swift */; };
+		83584FB8262C80290071FE8C /* RNGLinearGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83584FAD262C80290071FE8C /* RNGLinearGradientView.swift */; };
+		83584FB9262C80290071FE8C /* RNGGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83584FAE262C80290071FE8C /* RNGGradientView.swift */; };
+		83584FBA262C80290071FE8C /* RNGAngularGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83584FAF262C80290071FE8C /* RNGAngularGradientView.swift */; };
+		83584FBB262C80290071FE8C /* RNGRadialGradientViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 83584FB0262C80290071FE8C /* RNGRadialGradientViewManager.m */; };
+		83584FBC262C80290071FE8C /* RNGRadialGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83584FB1262C80290071FE8C /* RNGRadialGradientView.swift */; };
+		83584FBD262C80290071FE8C /* RNGLinearGradientViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 83584FB3262C80290071FE8C /* RNGLinearGradientViewManager.m */; };
+		83584FBE262C80290071FE8C /* RNGLinearGradientViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83584FB4262C80290071FE8C /* RNGLinearGradientViewManager.swift */; };
+		83584FBF262C80290071FE8C /* RNGAngularGradientViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 83584FB5262C80290071FE8C /* RNGAngularGradientViewManager.m */; };
+		83584FC0262C80290071FE8C /* RNGAngularGradientViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83584FB6262C80290071FE8C /* RNGAngularGradientViewManager.swift */; };
+		83584FC1262C80290071FE8C /* RNGRadialGradientViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83584FB7262C80290071FE8C /* RNGRadialGradientViewManager.swift */; };
+		8378B0E52631AF25007CAA30 /* RNGBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8378B0E12631AF25007CAA30 /* RNGBlurView.swift */; };
+		8378B0E62631AF25007CAA30 /* RNGBlurViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8378B0E22631AF25007CAA30 /* RNGBlurViewManager.m */; };
+		8378B0E72631AF25007CAA30 /* RNGBlurViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8378B0E42631AF25007CAA30 /* RNGBlurViewManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,17 +36,21 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libGraphics.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGraphics.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		83584FAD262C80290071FE8C /* LinearGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LinearGradientView.swift; path = ../apple/common/LinearGradientView.swift; sourceTree = "<group>"; };
-		83584FAE262C80290071FE8C /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GradientView.swift; path = ../apple/common/GradientView.swift; sourceTree = "<group>"; };
-		83584FAF262C80290071FE8C /* AngularGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AngularGradientView.swift; path = ../apple/common/AngularGradientView.swift; sourceTree = "<group>"; };
-		83584FB0262C80290071FE8C /* RadialGradientViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RadialGradientViewManager.m; path = ../apple/common/RadialGradientViewManager.m; sourceTree = "<group>"; };
-		83584FB1262C80290071FE8C /* RadialGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RadialGradientView.swift; path = ../apple/common/RadialGradientView.swift; sourceTree = "<group>"; };
-		83584FB2262C80290071FE8C /* GradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GradientView.h; path = ../apple/common/GradientView.h; sourceTree = "<group>"; };
-		83584FB3262C80290071FE8C /* LinearGradientViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LinearGradientViewManager.m; path = ../apple/common/LinearGradientViewManager.m; sourceTree = "<group>"; };
-		83584FB4262C80290071FE8C /* LinearGradientViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LinearGradientViewManager.swift; path = ../apple/common/LinearGradientViewManager.swift; sourceTree = "<group>"; };
-		83584FB5262C80290071FE8C /* AngularGradientViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AngularGradientViewManager.m; path = ../apple/common/AngularGradientViewManager.m; sourceTree = "<group>"; };
-		83584FB6262C80290071FE8C /* AngularGradientViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AngularGradientViewManager.swift; path = ../apple/common/AngularGradientViewManager.swift; sourceTree = "<group>"; };
-		83584FB7262C80290071FE8C /* RadialGradientViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RadialGradientViewManager.swift; path = ../apple/common/RadialGradientViewManager.swift; sourceTree = "<group>"; };
+		83584FAD262C80290071FE8C /* RNGLinearGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RNGLinearGradientView.swift; path = ../apple/common/RNGLinearGradientView.swift; sourceTree = "<group>"; };
+		83584FAE262C80290071FE8C /* RNGGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RNGGradientView.swift; path = ../apple/common/RNGGradientView.swift; sourceTree = "<group>"; };
+		83584FAF262C80290071FE8C /* RNGAngularGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RNGAngularGradientView.swift; path = ../apple/common/RNGAngularGradientView.swift; sourceTree = "<group>"; };
+		83584FB0262C80290071FE8C /* RNGRadialGradientViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNGRadialGradientViewManager.m; path = ../apple/common/RNGRadialGradientViewManager.m; sourceTree = "<group>"; };
+		83584FB1262C80290071FE8C /* RNGRadialGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RNGRadialGradientView.swift; path = ../apple/common/RNGRadialGradientView.swift; sourceTree = "<group>"; };
+		83584FB2262C80290071FE8C /* RNGGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNGGradientView.h; path = ../apple/common/RNGGradientView.h; sourceTree = "<group>"; };
+		83584FB3262C80290071FE8C /* RNGLinearGradientViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNGLinearGradientViewManager.m; path = ../apple/common/RNGLinearGradientViewManager.m; sourceTree = "<group>"; };
+		83584FB4262C80290071FE8C /* RNGLinearGradientViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RNGLinearGradientViewManager.swift; path = ../apple/common/RNGLinearGradientViewManager.swift; sourceTree = "<group>"; };
+		83584FB5262C80290071FE8C /* RNGAngularGradientViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNGAngularGradientViewManager.m; path = ../apple/common/RNGAngularGradientViewManager.m; sourceTree = "<group>"; };
+		83584FB6262C80290071FE8C /* RNGAngularGradientViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RNGAngularGradientViewManager.swift; path = ../apple/common/RNGAngularGradientViewManager.swift; sourceTree = "<group>"; };
+		83584FB7262C80290071FE8C /* RNGRadialGradientViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RNGRadialGradientViewManager.swift; path = ../apple/common/RNGRadialGradientViewManager.swift; sourceTree = "<group>"; };
+		8378B0E12631AF25007CAA30 /* RNGBlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RNGBlurView.swift; path = ../apple/ios/RNGBlurView.swift; sourceTree = "<group>"; };
+		8378B0E22631AF25007CAA30 /* RNGBlurViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNGBlurViewManager.m; path = ../apple/ios/RNGBlurViewManager.m; sourceTree = "<group>"; };
+		8378B0E32631AF25007CAA30 /* RNGBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNGBlurView.h; path = ../apple/ios/RNGBlurView.h; sourceTree = "<group>"; };
+		8378B0E42631AF25007CAA30 /* RNGBlurViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RNGBlurViewManager.swift; path = ../apple/ios/RNGBlurViewManager.swift; sourceTree = "<group>"; };
 		F4FF95D5245B92E700C19C63 /* Graphics-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Graphics-Bridging-Header.h"; path = "../apple/common/Graphics-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,17 +76,21 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-				83584FAF262C80290071FE8C /* AngularGradientView.swift */,
-				83584FB5262C80290071FE8C /* AngularGradientViewManager.m */,
-				83584FB6262C80290071FE8C /* AngularGradientViewManager.swift */,
-				83584FB2262C80290071FE8C /* GradientView.h */,
-				83584FAE262C80290071FE8C /* GradientView.swift */,
-				83584FAD262C80290071FE8C /* LinearGradientView.swift */,
-				83584FB3262C80290071FE8C /* LinearGradientViewManager.m */,
-				83584FB4262C80290071FE8C /* LinearGradientViewManager.swift */,
-				83584FB1262C80290071FE8C /* RadialGradientView.swift */,
-				83584FB0262C80290071FE8C /* RadialGradientViewManager.m */,
-				83584FB7262C80290071FE8C /* RadialGradientViewManager.swift */,
+				8378B0E32631AF25007CAA30 /* RNGBlurView.h */,
+				8378B0E12631AF25007CAA30 /* RNGBlurView.swift */,
+				8378B0E22631AF25007CAA30 /* RNGBlurViewManager.m */,
+				8378B0E42631AF25007CAA30 /* RNGBlurViewManager.swift */,
+				83584FAF262C80290071FE8C /* RNGAngularGradientView.swift */,
+				83584FB5262C80290071FE8C /* RNGAngularGradientViewManager.m */,
+				83584FB6262C80290071FE8C /* RNGAngularGradientViewManager.swift */,
+				83584FB2262C80290071FE8C /* RNGGradientView.h */,
+				83584FAE262C80290071FE8C /* RNGGradientView.swift */,
+				83584FAD262C80290071FE8C /* RNGLinearGradientView.swift */,
+				83584FB3262C80290071FE8C /* RNGLinearGradientViewManager.m */,
+				83584FB4262C80290071FE8C /* RNGLinearGradientViewManager.swift */,
+				83584FB1262C80290071FE8C /* RNGRadialGradientView.swift */,
+				83584FB0262C80290071FE8C /* RNGRadialGradientViewManager.m */,
+				83584FB7262C80290071FE8C /* RNGRadialGradientViewManager.swift */,
 				F4FF95D5245B92E700C19C63 /* Graphics-Bridging-Header.h */,
 				134814211AA4EA7D00B7C361 /* Products */,
 			);
@@ -142,16 +153,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83584FBC262C80290071FE8C /* RadialGradientView.swift in Sources */,
-				83584FC0262C80290071FE8C /* AngularGradientViewManager.swift in Sources */,
-				83584FBD262C80290071FE8C /* LinearGradientViewManager.m in Sources */,
-				83584FB9262C80290071FE8C /* GradientView.swift in Sources */,
-				83584FBA262C80290071FE8C /* AngularGradientView.swift in Sources */,
-				83584FB8262C80290071FE8C /* LinearGradientView.swift in Sources */,
-				83584FBF262C80290071FE8C /* AngularGradientViewManager.m in Sources */,
-				83584FC1262C80290071FE8C /* RadialGradientViewManager.swift in Sources */,
-				83584FBB262C80290071FE8C /* RadialGradientViewManager.m in Sources */,
-				83584FBE262C80290071FE8C /* LinearGradientViewManager.swift in Sources */,
+				83584FBC262C80290071FE8C /* RNGRadialGradientView.swift in Sources */,
+				83584FC0262C80290071FE8C /* RNGAngularGradientViewManager.swift in Sources */,
+				83584FBD262C80290071FE8C /* RNGLinearGradientViewManager.m in Sources */,
+				83584FB9262C80290071FE8C /* RNGGradientView.swift in Sources */,
+				8378B0E52631AF25007CAA30 /* RNGBlurView.swift in Sources */,
+				8378B0E72631AF25007CAA30 /* RNGBlurViewManager.swift in Sources */,
+				83584FBA262C80290071FE8C /* RNGAngularGradientView.swift in Sources */,
+				83584FB8262C80290071FE8C /* RNGLinearGradientView.swift in Sources */,
+				8378B0E62631AF25007CAA30 /* RNGBlurViewManager.m in Sources */,
+				83584FBF262C80290071FE8C /* RNGAngularGradientViewManager.m in Sources */,
+				83584FC1262C80290071FE8C /* RNGRadialGradientViewManager.swift in Sources */,
+				83584FBB262C80290071FE8C /* RNGRadialGradientViewManager.m in Sources */,
+				83584FBE262C80290071FE8C /* RNGLinearGradientViewManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
