@@ -1,0 +1,101 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXFileReference section */
+		83C88D582631B9B60090C8C9 /* RNGRadialGradientViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RNGRadialGradientViewManager.swift; path = ../apple/common/RNGRadialGradientViewManager.swift; sourceTree = "<group>"; };
+		83C88D592631B9B60090C8C9 /* RNGAngularGradientViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RNGAngularGradientViewManager.m; path = ../apple/common/RNGAngularGradientViewManager.m; sourceTree = "<group>"; };
+		83C88D5A2631B9B60090C8C9 /* RNGLinearGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RNGLinearGradientView.swift; path = ../apple/common/RNGLinearGradientView.swift; sourceTree = "<group>"; };
+		83C88D5B2631B9B60090C8C9 /* RNGGradientView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RNGGradientView.h; path = ../apple/common/RNGGradientView.h; sourceTree = "<group>"; };
+		83C88D5C2631B9B60090C8C9 /* RNGAngularGradientViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RNGAngularGradientViewManager.swift; path = ../apple/common/RNGAngularGradientViewManager.swift; sourceTree = "<group>"; };
+		83C88D5D2631B9B60090C8C9 /* Graphics-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Graphics-Bridging-Header.h"; path = "../apple/common/Graphics-Bridging-Header.h"; sourceTree = "<group>"; };
+		83C88D5E2631B9B60090C8C9 /* RNGGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RNGGradientView.swift; path = ../apple/common/RNGGradientView.swift; sourceTree = "<group>"; };
+		83C88D5F2631B9B60090C8C9 /* RNGLinearGradientViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RNGLinearGradientViewManager.m; path = ../apple/common/RNGLinearGradientViewManager.m; sourceTree = "<group>"; };
+		83C88D602631B9B60090C8C9 /* RNGLinearGradientViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RNGLinearGradientViewManager.swift; path = ../apple/common/RNGLinearGradientViewManager.swift; sourceTree = "<group>"; };
+		83C88D612631B9B60090C8C9 /* RNGRadialGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RNGRadialGradientView.swift; path = ../apple/common/RNGRadialGradientView.swift; sourceTree = "<group>"; };
+		83C88D622631B9B60090C8C9 /* RNGRadialGradientViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RNGRadialGradientViewManager.m; path = ../apple/common/RNGRadialGradientViewManager.m; sourceTree = "<group>"; };
+		83C88D632631B9B60090C8C9 /* RNGAngularGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RNGAngularGradientView.swift; path = ../apple/common/RNGAngularGradientView.swift; sourceTree = "<group>"; };
+		83C88D642631B9E40090C8C9 /* RNGBlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RNGBlurView.swift; path = ../apple/macos/RNGBlurView.swift; sourceTree = "<group>"; };
+		83C88D652631BB220090C8C9 /* RNGBlurViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RNGBlurViewManager.swift; path = ../apple/macos/RNGBlurViewManager.swift; sourceTree = "<group>"; };
+		83C88D662631BB5F0090C8C9 /* RNGBlurViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RNGBlurViewManager.m; path = ../apple/macos/RNGBlurViewManager.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		839C38122631B96900C16BFF = {
+			isa = PBXGroup;
+			children = (
+				83C88D662631BB5F0090C8C9 /* RNGBlurViewManager.m */,
+				83C88D652631BB220090C8C9 /* RNGBlurViewManager.swift */,
+				83C88D642631B9E40090C8C9 /* RNGBlurView.swift */,
+				83C88D5D2631B9B60090C8C9 /* Graphics-Bridging-Header.h */,
+				83C88D632631B9B60090C8C9 /* RNGAngularGradientView.swift */,
+				83C88D592631B9B60090C8C9 /* RNGAngularGradientViewManager.m */,
+				83C88D5C2631B9B60090C8C9 /* RNGAngularGradientViewManager.swift */,
+				83C88D5B2631B9B60090C8C9 /* RNGGradientView.h */,
+				83C88D5E2631B9B60090C8C9 /* RNGGradientView.swift */,
+				83C88D5A2631B9B60090C8C9 /* RNGLinearGradientView.swift */,
+				83C88D5F2631B9B60090C8C9 /* RNGLinearGradientViewManager.m */,
+				83C88D602631B9B60090C8C9 /* RNGLinearGradientViewManager.swift */,
+				83C88D612631B9B60090C8C9 /* RNGRadialGradientView.swift */,
+				83C88D622631B9B60090C8C9 /* RNGRadialGradientViewManager.m */,
+				83C88D582631B9B60090C8C9 /* RNGRadialGradientViewManager.swift */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		839C38132631B96900C16BFF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1240;
+			};
+			buildConfigurationList = 839C38162631B96900C16BFF /* Build configuration list for PBXProject "GraphicsMacOS" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 839C38122631B96900C16BFF;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		839C38172631B96900C16BFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		839C38182631B96900C16BFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		839C38162631B96900C16BFF /* Build configuration list for PBXProject "GraphicsMacOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				839C38172631B96900C16BFF /* Debug */,
+				839C38182631B96900C16BFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 839C38132631B96900C16BFF /* Project object */;
+}
