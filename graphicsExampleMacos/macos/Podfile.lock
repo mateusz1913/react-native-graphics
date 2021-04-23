@@ -450,7 +450,7 @@ SPEC CHECKSUMS:
   React-jsi: 9b54b3cc239a3f979a37ba90dde71917eda8ac73
   React-jsiexecutor: 8a519a78842852bbfcd526097f74879f01e1be2e
   React-jsinspector: d540c5f41df280d7c6b027edf2efe6d0b64cb211
-  react-native-graphics: d79e13cc200e769fb42b6ab0162ba49ddfd68536
+  react-native-graphics: d1f6d773fdf365ae89d0820e453b91d196448429
   React-RCTActionSheet: 04eb63a84c522a77e31f31061f9829caa9a96108
   React-RCTAnimation: 591bf90de04584fab8be2c14fcb763a4ea2e51fd
   React-RCTBlob: 2309505748ef77dec1887e405b14694f5b3f42f2

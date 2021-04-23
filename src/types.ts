@@ -43,6 +43,34 @@ export enum BlurType {
   ultraThinMaterialDark = 'ultraThinMaterialDark',
   /** iOS 13+ */
   ultraThinMaterialLight = 'ultraThinMaterialLight',
+  /** macOS */
+  contentBackground = 'contentBackground',
+  /** macOS */
+  fullScreenUI = 'fullScreenUI',
+  /** macOS */
+  headerView = 'headerView',
+  /** macOS */
+  hudWindow = 'hudWindow',
+  /** macOS */
+  menu = 'menu',
+  /** macOS */
+  popover = 'popover',
+  /** macOS */
+  selection = 'selection',
+  /** macOS */
+  sheet = 'sheet',
+  /** macOS */
+  sidebar = 'sidebar',
+  /** macOS */
+  titleBar = 'titleBar',
+  /** macOS */
+  tooltip = 'tooltip',
+  /** macOS */
+  underPageBackground = 'underPageBackground',
+  /** macOS */
+  underWindowBackground = 'underWindowBackground',
+  /** macOS */
+  windowBackground = 'windowBackground',
 }
 
 export interface BlurProps {

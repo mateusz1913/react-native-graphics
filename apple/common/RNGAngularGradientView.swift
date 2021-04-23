@@ -13,7 +13,7 @@ class RNGAngularGradientView: RNGGradientView {
         wantsLayer = true
         #endif
         clipsToBounds = true
-        if #available(iOS 12.0, macOS 10.14, *) {
+        if #available(iOS 12.0, *) {
             gradientLayer.type = .conic
         }
         gradientLayer.needsDisplayOnBoundsChange = true

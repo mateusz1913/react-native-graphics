@@ -4,22 +4,49 @@ import { Platform } from 'react-native';
 import { processColor, requireNativeComponent } from 'react-native';
 
 import type { BlurProps } from './types';
+import { BlurType } from './types';
 
 interface NativeBlurProps extends Omit<BlurProps, 'fallbackColor'> {
   fallbackColor?: ProcessedColorValue | null
 }
+
+const macosBlurTypes = [
+  BlurType.contentBackground,
+  BlurType.fullScreenUI,
+  BlurType.headerView,
+  BlurType.hudWindow,
+  BlurType.menu,
+  BlurType.popover,
+  BlurType.selection,
+  BlurType.sheet,
+  BlurType.sidebar,
+  BlurType.titleBar,
+  BlurType.tooltip,
+  BlurType.underPageBackground,
+  BlurType.underWindowBackground,
+  BlurType.windowBackground,
+];
 
 const NativeBlurView = requireNativeComponent<NativeBlurProps>('RNGBlurView');
 
 export const BlurView: React.FC<BlurProps> = (props) => {
   const { fallbackColor, ...rest } = props;
 
-  if (Platform.OS !== 'ios') {
+  if (![ 'ios', 'macos' ].includes(Platform.OS)) {
     return null;
+  }
+
+  let blurType = props.blurType;
+
+  if (blurType && Platform.OS === 'macos' && !macosBlurTypes.includes(blurType)) {
+    blurType = BlurType.fullScreenUI;
+  } else if (blurType && Platform.OS === 'ios' && macosBlurTypes.includes(blurType)) {
+    blurType = BlurType.dark;
   }
 
   return <NativeBlurView
     {...rest}
+    blurType={blurType}
     fallbackColor={processColor(fallbackColor)}
   />;
 };
