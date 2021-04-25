@@ -1,3 +1,4 @@
+import type React from 'react';
 import type { ColorValue, StyleProp, ViewStyle } from 'react-native';
 
 export interface AngularGradientProps {
@@ -90,6 +91,11 @@ export interface LinearGradientProps {
   angleCenter?: { x: number; y: number };
   endPoint?: { x: number; y: number };
   startPoint?: { x: number; y: number };
+  style?: StyleProp<ViewStyle>;
+}
+
+export interface MaskedViewProps {
+  mask: React.ReactElement;
   style?: StyleProp<ViewStyle>;
 }
 

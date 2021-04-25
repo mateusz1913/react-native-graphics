@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		835290F0263349570048ABBF /* RNGMaskedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835290EF263349570048ABBF /* RNGMaskedView.swift */; };
+		835290F6263349910048ABBF /* RNGMaskedViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 835290F5263349910048ABBF /* RNGMaskedViewManager.m */; };
+		835290FA263349A90048ABBF /* RNGMaskedViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835290F9263349A90048ABBF /* RNGMaskedViewManager.swift */; };
 		83584FB8262C80290071FE8C /* RNGLinearGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83584FAD262C80290071FE8C /* RNGLinearGradientView.swift */; };
 		83584FB9262C80290071FE8C /* RNGGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83584FAE262C80290071FE8C /* RNGGradientView.swift */; };
 		83584FBA262C80290071FE8C /* RNGAngularGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83584FAF262C80290071FE8C /* RNGAngularGradientView.swift */; };
@@ -36,6 +39,9 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libGraphics.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGraphics.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		835290EF263349570048ABBF /* RNGMaskedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RNGMaskedView.swift; path = ../apple/common/RNGMaskedView.swift; sourceTree = "<group>"; };
+		835290F5263349910048ABBF /* RNGMaskedViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RNGMaskedViewManager.m; path = ../apple/common/RNGMaskedViewManager.m; sourceTree = "<group>"; };
+		835290F9263349A90048ABBF /* RNGMaskedViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RNGMaskedViewManager.swift; path = ../apple/common/RNGMaskedViewManager.swift; sourceTree = "<group>"; };
 		83584FAD262C80290071FE8C /* RNGLinearGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RNGLinearGradientView.swift; path = ../apple/common/RNGLinearGradientView.swift; sourceTree = "<group>"; };
 		83584FAE262C80290071FE8C /* RNGGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RNGGradientView.swift; path = ../apple/common/RNGGradientView.swift; sourceTree = "<group>"; };
 		83584FAF262C80290071FE8C /* RNGAngularGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RNGAngularGradientView.swift; path = ../apple/common/RNGAngularGradientView.swift; sourceTree = "<group>"; };
@@ -76,6 +82,9 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
+				835290F9263349A90048ABBF /* RNGMaskedViewManager.swift */,
+				835290F5263349910048ABBF /* RNGMaskedViewManager.m */,
+				835290EF263349570048ABBF /* RNGMaskedView.swift */,
 				8378B0E32631AF25007CAA30 /* RNGBlurView.h */,
 				8378B0E12631AF25007CAA30 /* RNGBlurView.swift */,
 				8378B0E22631AF25007CAA30 /* RNGBlurViewManager.m */,
@@ -156,10 +165,13 @@
 				83584FBC262C80290071FE8C /* RNGRadialGradientView.swift in Sources */,
 				83584FC0262C80290071FE8C /* RNGAngularGradientViewManager.swift in Sources */,
 				83584FBD262C80290071FE8C /* RNGLinearGradientViewManager.m in Sources */,
+				835290F6263349910048ABBF /* RNGMaskedViewManager.m in Sources */,
 				83584FB9262C80290071FE8C /* RNGGradientView.swift in Sources */,
 				8378B0E52631AF25007CAA30 /* RNGBlurView.swift in Sources */,
 				8378B0E72631AF25007CAA30 /* RNGBlurViewManager.swift in Sources */,
+				835290FA263349A90048ABBF /* RNGMaskedViewManager.swift in Sources */,
 				83584FBA262C80290071FE8C /* RNGAngularGradientView.swift in Sources */,
+				835290F0263349570048ABBF /* RNGMaskedView.swift in Sources */,
 				83584FB8262C80290071FE8C /* RNGLinearGradientView.swift in Sources */,
 				8378B0E62631AF25007CAA30 /* RNGBlurViewManager.m in Sources */,
 				83584FBF262C80290071FE8C /* RNGAngularGradientViewManager.m in Sources */,

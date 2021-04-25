@@ -5,11 +5,13 @@ import {
   BlurType,
   BlurView,
   LinearGradientView,
+  MaskedView,
   RadialGradientView,
 } from 'react-native-graphics';
 
 export default function App() {
   const [ shouldBlurOverlay, setShouldBlurOverlay ] = useState(false);
+  const [ shouldMaskWithRect, setShouldMaskWithRect ] = useState(true);
 
   return (
     <View style={styles.container}>
@@ -39,8 +41,8 @@ export default function App() {
             </View>
           </BlurView>
         </View>
-        <View style={styles.blurSwitchContainer}>
-          <Text style={styles.blurText}>Should blur overlay?</Text>
+        <View style={styles.switchContainer}>
+          <Text style={styles.text}>Should blur overlay?</Text>
           <Switch
             onValueChange={setShouldBlurOverlay}
             value={shouldBlurOverlay}
@@ -84,6 +86,48 @@ export default function App() {
           centerPoint={{ x: 0.3, y: 0.4 }}
           style={styles.roundedBox}
         />
+        {!shouldMaskWithRect
+          ? <Image
+            style={styles.mask}
+            source={{ uri: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAYAAAA6oTAqAAAAEXRFWHRTb2Z0d2FyZQBwbmdjcnVzaEB1SfMAAABQSURBVGje7dSxCQBACARB+2/ab8BEeQNhFi6WSYzYLYudDQYGBgYGBgYGBgYGBgYGBgZmcvDqYGBgmhivGQYGBgYGBgYGBgYGBgYGBgbmQw+P/eMrC5UTVAAAAABJRU5ErkJggg==' }}
+          />
+          : <Image
+          style={styles.mask}
+          source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }}
+        />}
+        <MaskedView
+          mask={!shouldMaskWithRect
+            ? <Image
+              style={styles.mask}
+              source={{ uri: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAYAAAA6oTAqAAAAEXRFWHRTb2Z0d2FyZQBwbmdjcnVzaEB1SfMAAABQSURBVGje7dSxCQBACARB+2/ab8BEeQNhFi6WSYzYLYudDQYGBgYGBgYGBgYGBgYGBgZmcvDqYGBgmhivGQYGBgYGBgYGBgYGBgYGBgbmQw+P/eMrC5UTVAAAAABJRU5ErkJggg==' }}
+            />
+            : <Image
+            style={styles.mask}
+            source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }}
+          />}
+        >
+          <AngularGradientView
+            colors={[
+              'rgba(250,30,30,0.8)',
+              'rgba(240,100,50,0.6)',
+              'rgba(230,240,50,0.6)',
+              '#66FF66',
+              'rgba(100,200,250,0.6)',
+              '#7889CC',
+              '#4556BA',
+            ]}
+            locations={[ 0, 0.15, 0.3, 0.5, 0.7, 0.85, 1 ]}
+            centerPoint={{ x: 0.3, y: 0.4 }}
+            style={styles.roundedBox}
+          />
+        </MaskedView>
+        <View style={styles.switchContainer}>
+          <Text style={styles.text}>Should mask with rectangle?</Text>
+          <Switch
+            onValueChange={setShouldMaskWithRect}
+            value={shouldMaskWithRect}
+          />
+        </View>
       </ScrollView>
     </View>
   );
@@ -105,13 +149,13 @@ const styles = StyleSheet.create({
   blurRightLogo: {
     flexDirection: 'row-reverse',
   },
-  blurSwitchContainer: {
+  switchContainer: {
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'space-between',
     margin: 10,
   },
-  blurText: {
+  text: {
     fontSize: 14,
     margin: 10,
   },
@@ -138,6 +182,12 @@ const styles = StyleSheet.create({
   logo: {
     height: 100,
     width: 100,
+  },
+  mask: {
+    // backgroundColor: 'yellow',
+    height: 80,
+    margin: 40,
+    width: 80,
   },
   roundedBox: {
     alignItems: 'center',
