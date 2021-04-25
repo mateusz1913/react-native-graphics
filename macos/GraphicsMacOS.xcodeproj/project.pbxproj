@@ -22,12 +22,18 @@
 		83C88D642631B9E40090C8C9 /* RNGBlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RNGBlurView.swift; path = ../apple/macos/RNGBlurView.swift; sourceTree = "<group>"; };
 		83C88D652631BB220090C8C9 /* RNGBlurViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RNGBlurViewManager.swift; path = ../apple/macos/RNGBlurViewManager.swift; sourceTree = "<group>"; };
 		83C88D662631BB5F0090C8C9 /* RNGBlurViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RNGBlurViewManager.m; path = ../apple/macos/RNGBlurViewManager.m; sourceTree = "<group>"; };
+		83CE65EA263349D500974531 /* RNGMaskedViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RNGMaskedViewManager.swift; path = ../apple/common/RNGMaskedViewManager.swift; sourceTree = "<group>"; };
+		83CE65EB263349D500974531 /* RNGMaskedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RNGMaskedView.swift; path = ../apple/common/RNGMaskedView.swift; sourceTree = "<group>"; };
+		83CE65EC263349D500974531 /* RNGMaskedViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RNGMaskedViewManager.m; path = ../apple/common/RNGMaskedViewManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
 		839C38122631B96900C16BFF = {
 			isa = PBXGroup;
 			children = (
+				83CE65EB263349D500974531 /* RNGMaskedView.swift */,
+				83CE65EC263349D500974531 /* RNGMaskedViewManager.m */,
+				83CE65EA263349D500974531 /* RNGMaskedViewManager.swift */,
 				83C88D662631BB5F0090C8C9 /* RNGBlurViewManager.m */,
 				83C88D652631BB220090C8C9 /* RNGBlurViewManager.swift */,
 				83C88D642631B9E40090C8C9 /* RNGBlurView.swift */,

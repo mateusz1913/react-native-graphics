@@ -5,6 +5,7 @@ import {
   BlurType,
   BlurView,
   LinearGradientView,
+  MaskedView,
   RadialGradientView,
 } from 'react-native-graphics';
 
@@ -84,6 +85,29 @@ export default function App() {
           centerPoint={{ x: 0.3, y: 0.4 }}
           style={styles.roundedBox}
         />
+        <MaskedView
+          mask={<Image
+            style={styles.mask}
+            source={{
+              uri: 'https://reactnative.dev/img/tiny_logo.png',
+            }}
+          />}
+        >
+          <AngularGradientView
+            colors={[
+              'rgba(250,30,30,0.8)',
+              'rgba(240,100,50,0.6)',
+              'rgba(230,240,50,0.6)',
+              '#66FF66',
+              'rgba(100,200,250,0.6)',
+              '#7889CC',
+              '#4556BA',
+            ]}
+            locations={[ 0, 0.15, 0.3, 0.5, 0.7, 0.85, 1 ]}
+            centerPoint={{ x: 0.3, y: 0.4 }}
+            style={styles.roundedBox}
+          />
+        </MaskedView>
       </ScrollView>
     </View>
   );
@@ -138,6 +162,12 @@ const styles = StyleSheet.create({
   logo: {
     height: 100,
     width: 100,
+  },
+  mask: {
+    backgroundColor: 'yellow',
+    height: 80,
+    margin: 40,
+    width: 80,
   },
   roundedBox: {
     alignItems: 'center',
