@@ -28,7 +28,8 @@ export default function App() {
             />
           </View>
           <BlurView
-            blurType={BlurType.fullScreenUI}
+            blurIntensity={1}
+            blurType={BlurType.sidebar}
             fallbackColor={'#FFAA77'}
             shouldOverlay={shouldBlurOverlay}
             style={styles.blurContainer}>

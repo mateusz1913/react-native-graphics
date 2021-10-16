@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Image, ScrollView, StyleSheet, Switch, Text, View } from 'react-native';
+import React, { useEffect, useRef, useState } from 'react';
+import { Animated, Image, Platform, ScrollView, StyleSheet, Switch, Text, View } from 'react-native';
 import {
   AngularGradientView,
   BlurType,
@@ -9,9 +9,39 @@ import {
   RadialGradientView,
 } from 'react-native-graphics';
 
+const SHOULD_SHOW_BLUR_VIEW = Platform.OS === 'ios' || Platform.OS === 'macos' || Platform.OS === 'web' || Platform.OS === 'android' && Number(Platform.Version) >= 31;
+const SHOULD_SHOW_MASK_VIEW = Platform.OS === 'ios' || Platform.OS === 'macos';
+
 export default function App() {
   const [ shouldBlurOverlay, setShouldBlurOverlay ] = useState(false);
   const [ shouldMaskWithRect, setShouldMaskWithRect ] = useState(true);
+  const blurImageAnimatedValue = useRef(new Animated.Value(0));
+
+  useEffect(() => {
+    if (!SHOULD_SHOW_BLUR_VIEW) {
+      return;
+    }
+
+    const anim = Animated.loop(
+      Animated.sequence([
+        Animated.timing(blurImageAnimatedValue.current, {
+          duration: 800,
+          toValue: -100,
+          useNativeDriver: true,
+        }),
+        Animated.timing(blurImageAnimatedValue.current, {
+          duration: 800,
+          toValue: 0,
+          useNativeDriver: true,
+        }),
+      ]),
+    );
+
+    anim.start();
+    return () => {
+      anim.stop();
+    };
+  }, []);
 
   return (
     <View style={styles.container}>
@@ -21,7 +51,7 @@ export default function App() {
         showsVerticalScrollIndicator={false}
         style={styles.scroll}
       >
-        <View style={styles.box}>
+        {SHOULD_SHOW_BLUR_VIEW && <View style={styles.box}>
           <View style={[ styles.blurContentContainer, styles.blurLeftLogo ]}>
             <Image
               style={styles.logo}
@@ -29,25 +59,26 @@ export default function App() {
             />
           </View>
           <BlurView
+            blurIntensity={1}
             blurType={BlurType.light}
             fallbackColor={'#FFAA77'}
             shouldOverlay={shouldBlurOverlay}
             style={styles.blurContainer}>
             <View style={[ styles.blurContentContainer, styles.blurRightLogo ]}>
-              <Image
-                style={styles.logo}
+              <Animated.Image
+                style={[ styles.logo, { transform: [{ translateX: blurImageAnimatedValue.current }]}]}
                 source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }}
               />
             </View>
           </BlurView>
-        </View>
-        <View style={styles.switchContainer}>
+        </View>}
+        {[ 'ios', 'macos' ].includes(Platform.OS) && <View style={styles.switchContainer}>
           <Text style={styles.text}>Should blur overlay?</Text>
           <Switch
             onValueChange={setShouldBlurOverlay}
             value={shouldBlurOverlay}
           />
-        </View>
+        </View>}
         <LinearGradientView
           colors={[ 'rgba(100,200,250,0.3)', '#7889CC', '#4556BA' ]}
           locations={[ 0.1, 0.7, 0.9 ]}
@@ -86,48 +117,41 @@ export default function App() {
           centerPoint={{ x: 0.3, y: 0.4 }}
           style={styles.roundedBox}
         />
-        {!shouldMaskWithRect
-          ? <Image
-            style={styles.mask}
-            source={{ uri: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAYAAAA6oTAqAAAAEXRFWHRTb2Z0d2FyZQBwbmdjcnVzaEB1SfMAAABQSURBVGje7dSxCQBACARB+2/ab8BEeQNhFi6WSYzYLYudDQYGBgYGBgYGBgYGBgYGBgZmcvDqYGBgmhivGQYGBgYGBgYGBgYGBgYGBgbmQw+P/eMrC5UTVAAAAABJRU5ErkJggg==' }}
-          />
-          : <Image
-          style={styles.mask}
-          source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }}
-        />}
-        <MaskedView
-          mask={!shouldMaskWithRect
-            ? <Image
+        {SHOULD_SHOW_MASK_VIEW && <>
+          <MaskedView
+            mask={!shouldMaskWithRect
+              ? <Image
+                style={styles.mask}
+                source={{ uri: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAYAAAA6oTAqAAAAEXRFWHRTb2Z0d2FyZQBwbmdjcnVzaEB1SfMAAABQSURBVGje7dSxCQBACARB+2/ab8BEeQNhFi6WSYzYLYudDQYGBgYGBgYGBgYGBgYGBgZmcvDqYGBgmhivGQYGBgYGBgYGBgYGBgYGBgbmQw+P/eMrC5UTVAAAAABJRU5ErkJggg==' }}
+              />
+              : <Image
               style={styles.mask}
-              source={{ uri: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAYAAAA6oTAqAAAAEXRFWHRTb2Z0d2FyZQBwbmdjcnVzaEB1SfMAAABQSURBVGje7dSxCQBACARB+2/ab8BEeQNhFi6WSYzYLYudDQYGBgYGBgYGBgYGBgYGBgZmcvDqYGBgmhivGQYGBgYGBgYGBgYGBgYGBgbmQw+P/eMrC5UTVAAAAABJRU5ErkJggg==' }}
+              source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }}
+            />}
+          >
+            <AngularGradientView
+              colors={[
+                'rgba(250,30,30,0.8)',
+                'rgba(240,100,50,0.6)',
+                'rgba(230,240,50,0.6)',
+                '#66FF66',
+                'rgba(100,200,250,0.6)',
+                '#7889CC',
+                '#4556BA',
+              ]}
+              locations={[ 0, 0.15, 0.3, 0.5, 0.7, 0.85, 1 ]}
+              centerPoint={{ x: 0.3, y: 0.4 }}
+              style={styles.roundedBox}
             />
-            : <Image
-            style={styles.mask}
-            source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }}
-          />}
-        >
-          <AngularGradientView
-            colors={[
-              'rgba(250,30,30,0.8)',
-              'rgba(240,100,50,0.6)',
-              'rgba(230,240,50,0.6)',
-              '#66FF66',
-              'rgba(100,200,250,0.6)',
-              '#7889CC',
-              '#4556BA',
-            ]}
-            locations={[ 0, 0.15, 0.3, 0.5, 0.7, 0.85, 1 ]}
-            centerPoint={{ x: 0.3, y: 0.4 }}
-            style={styles.roundedBox}
-          />
-        </MaskedView>
-        <View style={styles.switchContainer}>
-          <Text style={styles.text}>Should mask with rectangle?</Text>
-          <Switch
-            onValueChange={setShouldMaskWithRect}
-            value={shouldMaskWithRect}
-          />
-        </View>
+          </MaskedView>
+          <View style={styles.switchContainer}>
+            <Text style={styles.text}>Should mask with rectangle?</Text>
+            <Switch
+              onValueChange={setShouldMaskWithRect}
+              value={shouldMaskWithRect}
+            />
+          </View>
+        </>}
       </ScrollView>
     </View>
   );
