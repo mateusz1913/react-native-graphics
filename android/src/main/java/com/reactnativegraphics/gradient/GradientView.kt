@@ -1,4 +1,4 @@
-package com.reactnativegraphics
+package com.reactnativegraphics.gradient
 
 import android.content.Context
 import android.graphics.*
@@ -7,15 +7,15 @@ import com.facebook.react.views.view.ReactViewGroup
 
 abstract class GradientView(context: Context?) : ReactViewGroup(context) {
   protected val mPaint = Paint(Paint.ANTI_ALIAS_FLAG)
-  protected var mPath: Path = Path()
-  protected var mRect: RectF = RectF()
+  private var mPath: Path = Path()
+  private var mRect: RectF = RectF()
 
   protected var mColors: MutableList<Int> = mutableListOf(Color.TRANSPARENT, Color.TRANSPARENT)
   protected var mLocations: MutableList<Float> = mutableListOf(0.0f, 1.0f)
 
   protected var mSize = listOf(0, 0)
-  protected var mBorderRadii = mutableListOf(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f)
-  protected var mBorderWidthList = mutableListOf(0.0f, 0.0f, 0.0f, 0.0f)
+  private var mBorderRadii = mutableListOf(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f)
+  private var mBorderWidthList = mutableListOf(0.0f, 0.0f, 0.0f, 0.0f)
 
   fun setColors(colors: ReadableArray?) {
     if (colors == null) {

@@ -1,7 +1,8 @@
-package com.reactnativegraphics
+package com.reactnativegraphics.gradient
 
 import com.facebook.react.bridge.ReadableArray
 import com.facebook.react.uimanager.annotations.ReactProp
+import com.reactnativegraphics.GraphicsViewManager
 
 abstract class GradientViewManager<T: GradientView>: GraphicsViewManager<T>() {
   @ReactProp(name = "colors")
