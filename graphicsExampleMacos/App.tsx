@@ -86,6 +86,12 @@ export default function App() {
           centerPoint={{ x: 0.3, y: 0.4 }}
           style={styles.roundedBox}
         />
+        <Image
+          style={styles.mask}
+          source={{
+            uri: 'https://reactnative.dev/img/tiny_logo.png',
+          }}
+        />
         <MaskedView
           mask={<Image
             style={styles.mask}
@@ -93,6 +99,7 @@ export default function App() {
               uri: 'https://reactnative.dev/img/tiny_logo.png',
             }}
           />}
+          style={styles.maskedView}
         >
           <AngularGradientView
             colors={[
@@ -169,6 +176,11 @@ const styles = StyleSheet.create({
     height: 80,
     margin: 40,
     width: 80,
+  },
+  maskedView: {
+    backgroundColor: 'orange',
+    height: 200,
+    width: 200,
   },
   roundedBox: {
     alignItems: 'center',

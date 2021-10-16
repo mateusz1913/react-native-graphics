@@ -8,7 +8,7 @@ const NativeMaskedView = requireNativeComponent<Omit<MaskedViewProps, 'mask'>>('
 export const MaskedView: React.FC<MaskedViewProps> = (props) => {
   const { children, mask, style } = props;
 
-  if (!React.isValidElement(mask) || Platform.OS !== 'ios') {
+  if (!React.isValidElement(mask) || ![ 'ios', 'macos' ].includes(Platform.OS)) {
     return <View style={style}>{children}</View>;
   }
 
