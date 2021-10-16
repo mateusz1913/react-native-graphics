@@ -32,7 +32,7 @@ const NativeBlurView = requireNativeComponent<NativeBlurProps>('RNGBlurView');
 export const BlurView: React.FC<BlurProps> = (props) => {
   const { blurIntensity = 1, fallbackColor, ...rest } = props;
 
-  if (![ 'ios', 'macos' ].includes(Platform.OS)) {
+  if (![ 'ios', 'macos', 'android' ].includes(Platform.OS)) {
     return null;
   }
 

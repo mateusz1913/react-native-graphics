@@ -1,4 +1,4 @@
-package com.reactnativegraphics
+package com.reactnativegraphics.gradient
 
 import com.facebook.react.bridge.ReadableMap
 import com.facebook.react.uimanager.*

@@ -1,4 +1,4 @@
-package com.reactnativegraphics
+package com.reactnativegraphics.gradient
 
 import android.content.Context
 import android.graphics.*
