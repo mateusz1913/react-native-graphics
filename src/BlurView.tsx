@@ -30,7 +30,7 @@ const macosBlurTypes = [
 const NativeBlurView = requireNativeComponent<NativeBlurProps>('RNGBlurView');
 
 export const BlurView: React.FC<BlurProps> = (props) => {
-  const { fallbackColor, ...rest } = props;
+  const { blurIntensity = 1, fallbackColor, ...rest } = props;
 
   if (![ 'ios', 'macos' ].includes(Platform.OS)) {
     return null;
@@ -46,6 +46,7 @@ export const BlurView: React.FC<BlurProps> = (props) => {
 
   return <NativeBlurView
     {...rest}
+    blurIntensity={Math.min(Math.max(0, blurIntensity), 1)}
     blurType={blurType}
     fallbackColor={processColor(fallbackColor)}
   />;
