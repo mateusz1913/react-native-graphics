@@ -2,7 +2,7 @@ import type React from 'react';
 import type { ColorValue, StyleProp, ViewStyle } from 'react-native';
 
 export interface AngularGradientProps {
-  colors: (number | ColorValue | undefined)[];
+  colors: (ColorValue | undefined)[];
   locations: number[];
   centerPoint?: { x: number; y: number };
   style?: StyleProp<ViewStyle>;
@@ -75,17 +75,31 @@ export enum BlurType {
 }
 
 export interface BlurProps {
-  /** @default "dark" */
+  /** value from 0 to 1 */
+  blurIntensity?: number;
+  /**
+   * @platform iOS & macOS & Web
+   * 
+   * @default "dark"
+   */
   blurType?: BlurType;
-  /** @platform iOS */
-  fallbackColor?: number | ColorValue;
-  /** @default false */
+  /**
+   * Color used as background when device has "reduced transparency" accessibility setting enabled
+   * 
+   * @platform iOS & macOS & Web
+   */
+  fallbackColor?: ColorValue;
+  /** 
+   * @platform iOS & macOS & Web
+   * 
+   * @default false
+   */
   shouldOverlay?: boolean;
   style?: StyleProp<ViewStyle>;
 }
 
 export interface LinearGradientProps {
-  colors: (number | ColorValue | undefined)[];
+  colors: (ColorValue | undefined)[];
   locations: number[];
   angle?: number;
   angleCenter?: { x: number; y: number };
@@ -100,7 +114,7 @@ export interface MaskedViewProps {
 }
 
 export interface RadialGradientProps {
-  colors: (number | ColorValue | undefined)[];
+  colors: (ColorValue | undefined)[];
   locations: number[];
   radius: number;
   centerPoint?: { x: number; y: number };

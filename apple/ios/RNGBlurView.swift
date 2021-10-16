@@ -1,7 +1,7 @@
 @objc(RNGBlurView)
 class RNGBlurView: RCTView {
-    var blurEffectView = UIVisualEffectView()
-    var fallbackView = UIView()
+    private var blurEffectView = UIVisualEffectView()
+    private var fallbackView = UIView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -19,6 +19,12 @@ class RNGBlurView: RCTView {
     
     deinit {
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc var blurIntensity: CGFloat = 1 {
+        didSet {
+            setNeedsLayout()
+        }
     }
     
     @objc var blurType: UIBlurEffect.Style = UIBlurEffect.Style.dark {
@@ -55,6 +61,7 @@ class RNGBlurView: RCTView {
         } else {
             let effect = UIBlurEffect(style: blurType)
             blurEffectView.effect = effect
+            blurEffectView.alpha = blurIntensity
             blurEffectView.frame = bounds
             insertSubview(blurEffectView, at: shouldOverlay ? subviews.count : 0)
         }

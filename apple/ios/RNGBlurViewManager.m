@@ -42,6 +42,7 @@ RCT_ENUM_CONVERTER(UIBlurEffectStyle, (@{
 
 @interface RCT_EXTERN_MODULE(RNGBlurViewManager, RCTViewManager)
 
+RCT_EXPORT_VIEW_PROPERTY(blurIntensity, CGFloat)
 RCT_EXPORT_VIEW_PROPERTY(blurType, UIBlurEffectStyle)
 RCT_CUSTOM_VIEW_PROPERTY(fallbackColor, UIColor, RNGBlurView) {
     [view setFallbackColor:[RCTConvert UIColor:json]];
