@@ -1,0 +1,68 @@
+{
+  "name": "react-native-graphics",
+  "version": "0.1.0",
+  "description": "Graphics native components",
+  "keywords": [
+    "gradient",
+    "blur",
+    "mask",
+    "react-native",
+    "ios",
+    "android",
+    "macos",
+    "web"
+  ],
+  "main": "src",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mateusz1913/react-native-graphics.git",
+    "directory": "packages/react-native-graphics"
+  },
+  "author": "Mateusz Mędrek <luigimario1913@gmail.com> (https://github.com/mateusz1913)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mateusz1913/react-native-graphics/issues"
+  },
+  "homepage": "https://github.com/mateusz1913/react-native-graphics#readme",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "files": [
+    "src",
+    "lib",
+    "android",
+    "ios",
+    "cpp",
+    "react-native-graphics.podspec",
+    "!lib/typescript/example",
+    "!android/build",
+    "!ios/build",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__"
+  ],
+  "devDependencies": {
+    "@types/react": "17.0.30",
+    "@types/react-native": "0.65.8",
+    "react": "17.0.2",
+    "react-native": "0.66.1"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-dom": "*",
+    "react-native": "*",
+    "react-native-macos": "*",
+    "react-native-web": "*"
+  },
+  "peerDependenciesMeta": {
+    "react-dom": {
+      "optional": true
+    },
+    "react-native-macos": {
+      "optional": true
+    },
+    "react-native-web": {
+      "optional": true
+    }
+  }
+}

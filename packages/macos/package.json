@@ -1,0 +1,45 @@
+{
+  "name": "@graphics-example/macos",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "macos": "react-native run-macos",
+    "xcode": "xed macos",
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+  },
+  "dependencies": {
+    "@graphics-example/app": "*",
+    "react": "16.13.1",
+    "react-native": "0.63.4",
+    "react-native-macos": "^0.63.0-0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/runtime": "^7.8.4",
+    "@types/jest": "^25.2.3",
+    "@types/react-native": "^0.63.2",
+    "@types/react-test-renderer": "^16.9.2",
+    "babel-jest": "^25.1.0",
+    "get-yarn-workspaces": "^1.0.2",
+    "jest": "^25.1.0",
+    "metro-react-native-babel-preset": "^0.59.0",
+    "react-native-monorepo-tools": "^1.1.1",
+    "react-test-renderer": "16.13.1"
+  },
+  "resolutions": {
+    "@types/react": "^16"
+  },
+  "jest": {
+    "preset": "react-native",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  }
+}
