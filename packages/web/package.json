@@ -1,0 +1,40 @@
+{
+  "name": "@graphics-example/web",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "build": "rm -rf dist/ && webpack --mode=production --config webpack.config.js",
+    "start": "webpack serve --mode=development --config webpack.config.js"
+  },
+  "dependencies": {
+    "@graphics-example/app": "*",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-native": "^0.66.1",
+    "react-native-web": "^0.17.5"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.30",
+    "@types/react-dom": "^17.0.9",
+    "@types/react-native": "0.65.8",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-react-native-web": "^0.17.5",
+    "html-webpack-plugin": "^5.4.0",
+    "react-native-monorepo-tools": "^1.1.1",
+    "webpack": "^5.58.2",
+    "webpack-cli": "^4.9.0",
+    "webpack-dev-server": "^4.3.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

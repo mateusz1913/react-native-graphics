@@ -2,40 +2,52 @@
   "name": "react-native-graphics",
   "version": "0.1.0",
   "description": "Graphics native components",
+  "private": true,
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/index.d.ts",
-  "react-native": "src/index",
-  "source": "src/index",
-  "files": [
-    "src",
-    "lib",
-    "android",
-    "ios",
-    "cpp",
-    "react-native-graphics.podspec",
-    "!lib/typescript/example",
-    "!android/build",
-    "!ios/build",
-    "!**/__tests__",
-    "!**/__fixtures__",
-    "!**/__mocks__"
-  ],
+  "react-native": "packages/react-native-graphics/src/index",
+  "source": "packages/react-native-graphics/src/index",
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/react",
+      "**/react-dom",
+      "**/react-native",
+      "**/react-native/**",
+      "**/react-native-macos",
+      "**/react-native-web"
+    ]
+  },
   "scripts": {
     "test": "jest",
     "typescript": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
-    "prepare": "bob build",
+    "prepare": "bob build && husky install",
     "release": "release-it",
-    "example": "yarn --cwd example",
-    "pods": "cd example && pod-install --quiet",
-    "bootstrap": "yarn example && yarn && yarn pods"
+    "example:mobile": "yarn --cwd packages/mobile",
+    "example:macos": "yarn --cwd packages/macos",
+    "example:web": "yarn --cwd packages/web",
+    "bootstrap": "yarn example:mobile && yarn && yarn pods:ios && yarn example:macos && yarn && yarn pods:macos && yarn example:web && yarn",
+    "pods:ios": "cd packages/mobile && pod-install --quiet && cd ../..",
+    "pods:macos": "cd packages/macos && pod-install --quiet && cd ../..",
+    "reset": "yarn reset:node_modules && yarn reset:pods",
+    "reset:node_modules": "find . -type dir -name node_modules | xargs rm -rf && rm -rf yarn.lock",
+    "reset:pods": "find . -type dir -name Pods | xargs rm -rf && find . -type f -name Podfile.lock | xargs rm -rf",
+    "android:metro": "yarn workspace @graphics-example/mobile start",
+    "android:start": "yarn workspace @graphics-example/mobile android",
+    "android:studio": "yarn workspace @graphics-example/mobile studio",
+    "ios:metro": "yarn workspace @graphics-example/mobile start",
+    "ios:start": "yarn workspace @graphics-example/mobile ios",
+    "ios:xcode": "yarn workspace @graphics-example/mobile xcode",
+    "macos:metro": "yarn workspace @graphics-example/macos start",
+    "macos:start": "yarn workspace @graphics-example/macos macos",
+    "macos:xcode": "yarn workspace @graphics-example/macos xcode",
+    "web:start": "yarn workspace @graphics-example/web start",
+    "web:build": "yarn workspace @graphics-example/web build"
   },
-  "keywords": [
-    "react-native",
-    "ios",
-    "android"
-  ],
   "repository": "https://github.com/mateusz1913/react-native-graphics",
   "author": "Mateusz Mędrek <luigimario1913@gmail.com> (https://github.com/mateusz1913)",
   "license": "MIT",
@@ -47,50 +59,22 @@
     "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {
-    "@babel/core": "^7.13.15",
-    "@babel/runtime": "^7.13.10",
     "@commitlint/config-conventional": "^11.0.0",
     "@release-it/conventional-changelog": "^2.0.0",
-    "@types/jest": "^26.0.22",
-    "@types/node": "^16.10.1",
-    "@types/react": "17.0.3",
-    "@types/react-native": "0.64.2",
-    "@typescript-eslint/eslint-plugin": "^4.22.0",
-    "@typescript-eslint/parser": "^4.22.0",
-    "babel-jest": "^26.6.3",
-    "commitlint": "^11.0.0",
-    "eslint": "^7.24.0",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "commitlint": "^13.2.1",
+    "eslint": "^8.0.1",
     "eslint-config-react": "^1.1.7",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-react": "^7.26.1",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "eslint-plugin-react-native": "^3.10.0",
-    "husky": "^4.2.5",
-    "jest": "^26.6.3",
-    "pod-install": "^0.1.0",
-    "react": "17.0.1",
-    "react-native": "0.64.0",
-    "react-native-builder-bob": "^0.18.0",
-    "release-it": "^14.2.2",
-    "ts-jest": "^26.5.5",
-    "typescript": "^4.1.3"
-  },
-  "peerDependencies": {
-    "react": "*",
-    "react-native": "*"
-  },
-  "jest": {
-    "preset": "react-native",
-    "modulePathIgnorePatterns": [
-      "<rootDir>/example/node_modules",
-      "<rootDir>/lib/"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "yarn lint && yarn typescript"
-    }
+    "eslint-plugin-react-native": "^3.11.0",
+    "husky": "^7.0.0",
+    "pod-install": "^0.1.28",
+    "react-native-builder-bob": "^0.18.2",
+    "release-it": "^14.11.6",
+    "typescript": "^4.4.4"
   },
   "commitlint": {
     "extends": [
@@ -114,38 +98,8 @@
       }
     }
   },
-  "eslintConfig": {
-    "root": true,
-    "extends": [
-      "@react-native-community",
-      "prettier"
-    ],
-    "rules": {
-      "prettier/prettier": [
-        "error",
-        {
-          "quoteProps": "consistent",
-          "singleQuote": true,
-          "tabWidth": 2,
-          "trailingComma": "es5",
-          "useTabs": false
-        }
-      ]
-    }
-  },
-  "eslintIgnore": [
-    "node_modules/",
-    "lib/"
-  ],
-  "prettier": {
-    "quoteProps": "consistent",
-    "singleQuote": true,
-    "tabWidth": 2,
-    "trailingComma": "es5",
-    "useTabs": false
-  },
   "react-native-builder-bob": {
-    "source": "src",
+    "source": "packages/react-native-graphics/src",
     "output": "lib",
     "targets": [
       "commonjs",
