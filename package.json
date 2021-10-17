@@ -18,7 +18,7 @@
     "typescript": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "prepare": "bob build && husky install",
-    "release": "yarn --cwd packages/react-native-graphics && release-it",
+    "release": "yarn --cwd packages/react-native-graphics release-it",
     "example:mobile": "yarn --cwd packages/mobile",
     "example:macos": "yarn --cwd packages/macos",
     "example:web": "yarn --cwd packages/web",
