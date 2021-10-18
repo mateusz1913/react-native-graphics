@@ -19,7 +19,7 @@ RCT_ENUM_CONVERTER(UIBlurEffectStyle, (@{
     @"prominent": @(UIBlurEffectStyleProminent),
     @"regular": @(UIBlurEffectStyleRegular),
     @"xlight": @(UIBlurEffectStyleExtraLight),
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 130000
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 130000 || __TV_OS_VERSION_MAX_ALLOWED >= 130000
     @"chromeMaterial": @(UIBlurEffectStyleSystemChromeMaterial),
     @"chromeMaterialDark": @(UIBlurEffectStyleSystemChromeMaterialDark),
     @"chromeMaterialLight": @(UIBlurEffectStyleSystemChromeMaterialLight),
