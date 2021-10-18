@@ -4,6 +4,7 @@ import {
   AngularGradientView,
   BlurType,
   BlurView,
+  CanvasView,
   LinearGradientView,
   MaskedView,
   RadialGradientView,
@@ -51,6 +52,172 @@ export default function App() {
         showsVerticalScrollIndicator={false}
         style={styles.scroll}
       >
+        <View style={styles.row}>
+          <CanvasView
+            paths={[
+              {
+                d: 'M 10,30 A 20,20 0,0,1 50,30 A 20,20 0,0,1 90,30 Q 90,60 50,90 Q 10,60 10,30 Z',
+                fill: 'rgba(255, 40, 40, 0.7)',
+              },
+            ]}
+            style={styles.canvas}
+            viewBox="0 0 100 100"
+          />
+          <CanvasView
+            paths={[
+              {
+                d: 'M 5 55 q 37 -66 66 0',
+                stroke: 'yellow',
+                strokeCap: 'butt',
+                strokeJoin: 'round',
+                strokeWidth: 5,
+              },
+              {
+                d: 'M 10,30 A 20,20 0,0,1 50,30 A 20,20 0,0,1 90,30 Q 90,60 50,90 Q 10,60 10,30 Z',
+                stroke: '#FF00FF',
+                strokeWidth: 3,
+              },
+              {
+                d: 'M 25 75 q 37 -66 66 0',
+                stroke: 'blue',
+                strokeCap: 'round',
+                strokeJoin: 'miter',
+                strokeWidth: 8,
+              },
+            ]}
+            style={[ styles.canvas, styles.green ]}
+            viewBox="0 0 100 100"
+          />
+          <CanvasView
+            paths={[
+              {
+                d: 'M 10,30 A 20,20 0,0,1 50,30 A 20,20 0,0,1 90,30 Q 90,60 50,90 Q 10,60 10,30 Z',
+                fill: 'rgba(255, 40, 40, 0.7)',
+              },
+            ]}
+            style={styles.canvas}
+            viewBox="50 -50 100 100"
+          />
+        </View>
+        <View style={styles.row}>
+          <CanvasView
+            paths={[
+              {
+                d: 'M 10,30 A 20,20 0,0,1 50,30 A 20,20 0,0,1 90,30 Q 90,60 50,90 Q 10,60 10,30 Z',
+                fill: 'rgba(255, 40, 40, 0.7)',
+              },
+            ]}
+            style={styles.canvas}
+            viewBox="0 0 100 100"
+          />
+          <CanvasView
+            paths={[
+              {
+                d: 'M 10,30 A 20,20 0,0,1 50,30 A 20,20 0,0,1 90,30 Q 90,60 50,90 Q 10,60 10,30 Z',
+                fill: 'rgba(255, 40, 40, 0.7)',
+              },
+            ]}
+            style={styles.canvas}
+            viewBox="-50 50 100 100"
+          />
+          <View>
+            <CanvasView
+              paths={[
+                {
+                  d: 'M 10,30 A 20,20 0,0,1 50,30 A 20,20 0,0,1 90,30 Q 90,60 50,90 Q 10,60 10,30 Z',
+                  fill: '#65FF65',
+                },
+              ]}
+              style={[ styles.canvas, styles.absolute ]}
+              viewBox="50 -50 100 100"
+            />
+            <CanvasView
+              paths={[
+                {
+                  d: 'M 60,-20 A 20,20 0,0,1 100,-20 A 20,20 0,0,1 140,-20 Q 140,10 100,40 Q 60,10 60,-20 Z',
+                  fill: '#FF00FF',
+                },
+              ]}
+              style={styles.canvas}
+              viewBox="50 -50 100 100"
+            />
+          </View>
+        </View>
+        <View style={styles.row}>
+          <CanvasView
+            paths={[
+              {
+                d: 'M 25,75 Q 50,150 75,100 T 150,150',
+                stroke: 'rgba(255, 40, 40, 0.7)',
+              },
+            ]}
+            style={styles.canvas}
+            viewBox="0 0 100 100"
+          />
+          <CanvasView
+            paths={[
+              {
+                d: 'M 10,30 A 20,20 0,0,1 50,30 A 20,20 0,0,1 90,30 Q 90,60 50,90 Q 10,60 10,30 Z',
+                fill: 'rgba(255, 40, 40, 0.7)',
+              },
+            ]}
+            style={styles.canvas}
+            viewBox="0 0 100 100"
+          />
+          <CanvasView
+            paths={[
+              {
+                d: [
+                  'M 25,100',
+                  'C 25,150 75,150 75,100',
+                  'S 100,25 150,75',
+                ].join(' '),
+                stroke: 'rgba(255, 40, 40, 0.7)',
+              },
+            ]}
+            style={styles.canvas}
+            viewBox="0 0 100 100"
+          />
+        </View>
+        <View style={styles.row}>
+          <CanvasView
+            paths={[
+              {
+                d: 'M50 0 L15 100 L85 100 Z',
+              },
+              {
+                d: `
+                M 38.459,1.66
+                A 0.884,0.884,0,0,1,39,2.5
+                a 0.7,0.7,0,0,1-.3.575
+                L 23.235,16.092,27.58,26.1
+                a1.4,1.4,0,0,1,.148.3,1.3,1.3,0,0,1,0,.377,1.266,1.266,0,0,1-2.078.991
+                L15.526,20.6l-7.58,4.35
+                a1.255,1.255,0,0,1-.485,0,1.267,1.267,0,0,1-1.277-1.258
+                q0-.01,0-0.02
+                a1.429,1.429,0,0,1,0-.446
+                C7.243,20.253,8.6,16.369,8.6,16.29
+                L3.433,13.545
+                A0.743,0.743,0,0,1,2.9,12.822
+                a0.822,0.822,0,0,1,.623-0.773
+                l8.164-2.972,3.018-8.5
+                A0.822,0.822,0,0,1,15.427,0
+                a0.752,0.752,0,0,1,.752.555
+                l2.563,6.936S37.65,1.727,37.792,1.685
+                A1.15,1.15,0,0,1,38.459,1.66
+                Z
+                `,
+                fill: 'red',
+              },
+              {
+                d: 'M6.5 1C7.9 1 9 2.1 9 3.5c0 .8-.4 1.6-1.1 2.1-.4.2-.9.4-1.4.4s-1-.2-1.4-.4C4.4 5.1 4 4.3 4 3.5 4 2.1       5.1 1 6.5 1m0-1C4.6 0 3 1.6 3 3.5c0 1.2.6 2.2 1.5 2.9.6.4 1.3.6 2 .6s1.4-.2 2-.6c.9-.7 1.5-1.7 1.5-2.9C10 1.6 8.4 0 6.5 0zm3.6 8.9c.6.8.9 1.7.9 2.6v.5H2v-.5c0-1 .3-1.9.9-2.6 1 .7 2.3 1.1 3.6 1.1s2.6-.4 3.6-1.1m.2-1.4C9.3 8.4 8 9 6.5 9s-2.8-.6-3.8-1.5c-1.1 1-1.7 2.4-1.7 4 0 .5.1 1.5.2 1.5h10.6c.1 0 .2-1 .2-1.5 0-1.6-.7-3-1.7-4z',
+                fill: 'blue',
+              },
+            ]}
+            style={styles.canvas}
+            viewBox="0 0 25 25"
+          />
+        </View>
         {SHOULD_SHOW_BLUR_VIEW && <View style={styles.box}>
           <View style={[ styles.blurContentContainer, styles.blurLeftLogo ]}>
             <Image
@@ -158,6 +325,9 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
+  absolute: {
+    position: 'absolute',
+  },
   blurContentContainer: {
     alignSelf: 'stretch',
     flexDirection: 'row',
@@ -192,6 +362,10 @@ const styles = StyleSheet.create({
     marginVertical: 20,
     width: 200,
   },
+  canvas: {
+    height: 100,
+    width: 100,
+  },
   childBox: {
     backgroundColor: 'rgba(250,120,0,0.4)',
     height: 60,
@@ -202,6 +376,9 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
     flex: 1,
     justifyContent: 'center',
+  },
+  green: {
+    backgroundColor: 'green',
   },
   logo: {
     height: 100,
@@ -222,6 +399,9 @@ const styles = StyleSheet.create({
     marginVertical: 20,
     width: 200,
   },
+  row: {
+    flexDirection: 'row',
+  },
   scroll: {
     alignSelf: 'stretch',
   },
@@ -230,5 +410,6 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
     flexGrow: 1,
     padding: 10,
+    paddingTop: 50,
   },
 });

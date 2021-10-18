@@ -8,6 +8,7 @@ import com.reactnativegraphics.blur.BlurViewManager
 import com.reactnativegraphics.gradient.AngularGradientViewManager
 import com.reactnativegraphics.gradient.LinearGradientViewManager
 import com.reactnativegraphics.gradient.RadialGradientViewManager
+import com.reactnativegraphics.path.CanvasViewManager
 
 class GraphicsPackage : ReactPackage {
     override fun createNativeModules(reactContext: ReactApplicationContext): List<NativeModule> {
@@ -19,7 +20,8 @@ class GraphicsPackage : ReactPackage {
           AngularGradientViewManager(),
           LinearGradientViewManager(),
           RadialGradientViewManager(),
-          BlurViewManager()
+          BlurViewManager(),
+          CanvasViewManager()
         )
     }
 }

@@ -98,6 +98,13 @@ export interface BlurProps {
   style?: StyleProp<ViewStyle>;
 }
 
+export interface CanvasViewProps {
+  paths: PathConfig[]
+  preserveAspectRatio?: string;
+  style?: StyleProp<ViewStyle>;
+  viewBox: string;
+}
+
 export interface LinearGradientProps {
   colors: (ColorValue | undefined)[];
   locations: number[];
@@ -114,6 +121,17 @@ export interface LinearGradientProps {
 export interface MaskedViewProps {
   mask: React.ReactElement;
   style?: StyleProp<ViewStyle>;
+}
+
+export interface PathConfig {
+  d: string
+  fill?: ColorValue;
+  fillRule?: 'evenodd' | 'nonzero';
+  stroke?: ColorValue;
+  strokeCap?: 'butt' | 'round' | 'square';
+  strokeJoin?: 'bevel' | 'miter' | 'round';
+  strokeMiterLimit?: number;
+  strokeWidth?: number;
 }
 
 export interface RadialGradientProps {
