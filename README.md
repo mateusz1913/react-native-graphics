@@ -1,22 +1,8 @@
-# react-native-graphics
+# `react-native-graphics`
 
-Graphics native components
+Native components exposing platform graphics classes & functionalities. Library supports Android, iOS, macOS, tvOS & Web
 
-## Installation
-
-```sh
-npm install react-native-graphics
-```
-
-## Usage
-
-```js
-import Graphics from "react-native-graphics";
-
-// ...
-
-const result = await Graphics.multiply(3, 7);
-```
+Check package [README](packages/react-native-graphics/README.md)
 
 ## Contributing
 
