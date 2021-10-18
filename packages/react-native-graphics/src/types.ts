@@ -102,8 +102,11 @@ export interface LinearGradientProps {
   colors: (ColorValue | undefined)[];
   locations: number[];
   angle?: number;
+  /** @platform Android & iOS & macOS */
   angleCenter?: { x: number; y: number };
+  /** @platform Android & iOS & macOS */
   endPoint?: { x: number; y: number };
+  /** @platform Android & iOS & macOS */
   startPoint?: { x: number; y: number };
   style?: StyleProp<ViewStyle>;
 }
